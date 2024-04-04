@@ -36,3 +36,9 @@ yarn-error.log*
 next-env.d.ts
 
 *storybook.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IntelliJ Platform
+.idea

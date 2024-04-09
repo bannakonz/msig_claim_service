@@ -1,0 +1,166 @@
+body {
+  font-family: "DB Merit X";
+}
+
+.rmdp-border {
+  border: none !important;
+}
+
+.rmdp-top-class {
+  width: -webkit-fill-available !important;
+}
+
+.rmdp-wrapper {
+  width: -webkit-fill-available !important;
+}
+.rmdp-top-class {
+  display: block !important;
+}
+
+.rmdp-day-picker {
+  justify-content: center !important;
+}
+
+.rmdp-week-day {
+  font-size: 21px !important;
+  color: #1b1464 !important;
+}
+
+.sd {
+  font-size: 16px !important;
+}
+.rmdp-header {
+  font-size: 16px !important;
+}
+
+.rmdp-day,
+.rmdp-week-day {
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.rmdp-arrow {
+  border-color: #1b1464 !important;
+}
+
+.rmdp-arrow-container:hover {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.rmdp-range {
+  background-color: #e1e8f0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #000 !important;
+}
+
+.rmdp-day span {
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: 0 !important;
+  width: 44px !important;
+  height: 44px !important;
+  font-size: 21px !important;
+}
+
+.rmdp-range-hover.start,
+.rmdp-range.start > .sd {
+  border-radius: 100% !important;
+  background-color: #1b1464 !important;
+  color: #fff !important;
+}
+
+.rmdp-range-hover.end,
+.rmdp-range.end > .sd {
+  border-radius: 100% !important;
+  background-color: #1b1464 !important;
+  color: #fff !important;
+}
+
+.rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover {
+  border-radius: 100% !important;
+  background-color: #1b1464 !important;
+  color: #fff !important;
+}
+
+.rmdp-day.rmdp-today span {
+  background-color: transparent !important;
+  color: initial !important;
+  border: 1px solid #1b1464 !important;
+}
+
+.rmdp-ym .rmdp-day span {
+  width: 100% !important;
+}
+
+.rmdp-month-picker > .rmdp-ym .rmdp-day span {
+  width: 100% !important;
+  font-size: 16px !important;
+}
+
+.rmdp-year-picker > .rmdp-ym .rmdp-day span {
+  width: 100% !important;
+  font-size: 16px !important;
+}
+
+.rmdp-year-picker > .rmdp-ym .rmdp-day span:hover {
+  border-radius: 12px !important;
+  background-color: #1b1464 !important;
+  color: #fff !important;
+}
+
+.rmdp-month-picker > .rmdp-ym .rmdp-day span:hover {
+  border-radius: 12px !important;
+  background-color: #1b1464 !important;
+  color: #fff !important;
+  width: 100% !important;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: #1b1464 !important;
+  color: #fff !important;
+}
+
+.rmdp-header-values {
+  font-size: 21px;
+  color: #27272a !important;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.rmdp-header-values span:hover {
+  color: #1b1464;
+}
+
+.rmdp-header-values span:first-child {
+  border-bottom: 1px solid #1b1464;
+}
+
+.rmdp-header-values span:last-child {
+  border-bottom: 1px solid #1b1464;
+}
+
+.rmdp-header-values span:first-child::after {
+  content: url("/assets/icons/dropdown-picker.svg");
+  position: relative;
+  top: 6px;
+  margin-left: 30px;
+}
+
+.rmdp-header-values span:last-child::after {
+  content: url("/assets/icons/dropdown-picker.svg");
+  position: relative;
+  top: 6px;
+  margin-left: 30px;
+}
+
+.rmdp-calendar {
+  padding: 0;
+}

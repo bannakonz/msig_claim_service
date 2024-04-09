@@ -22,17 +22,17 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import type { Calendar as CalendarType } from "react-date-object";
-import SVG from "react-inlinesvg";
 import {
   Calendar,
   CalendarProps,
-  DateObject,
-  Value as CalendarValue
+  Value as CalendarValue,
+  DateObject
 } from "react-multi-date-picker";
 
-import { locale_en, locale_th, thai } from "@/constants/calendar";
+import React from "react";
+import { locale_en, locale_th, thai } from "../../../constants/calendar";
+import ErrorMessage from "../../input/ErrorMessage";
 // import { Icons } from "@/constants/ICONS";
-import ErrorMessage from "@/components/input/ErrorMessage";
 
 const thai_th = thai as CalendarType;
 
@@ -256,7 +256,7 @@ const CalendarContent = (
       return;
     }
 
-    const formatted = [];
+    const formatted: string[] = [];
 
     if (Array.isArray(submitValues)) {
       // MSIG-563
@@ -325,7 +325,7 @@ const CalendarContent = (
             justifyContent="space-between"
             alignItems="flex-start"
             flexDirection="column"
-            px={2}
+            px={0}
             py={4}
           >
             <Calendar
@@ -358,6 +358,7 @@ const CalendarContent = (
               weekStartDayIndex={1}
               {...rest}
               maxDate={maxDate}
+              monthYearSeparator=" "
             />
 
             {/* MSIG-864 แสดง label เหมือนกันทั้งในประเทศ ต่างประเทศ */}

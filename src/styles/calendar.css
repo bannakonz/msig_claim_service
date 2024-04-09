@@ -1,3 +1,7 @@
+body {
+  font-family: "DB Merit X";
+}
+
 .rmdp-border {
   border: none !important;
 }
@@ -90,6 +94,10 @@
   border: 1px solid #1b1464 !important;
 }
 
+.rmdp-ym .rmdp-day span {
+  width: 100% !important;
+}
+
 .rmdp-month-picker > .rmdp-ym .rmdp-day span {
   width: 100% !important;
   font-size: 16px !important;
@@ -110,6 +118,7 @@
   border-radius: 12px !important;
   background-color: #1b1464 !important;
   color: #fff !important;
+  width: 100% !important;
 }
 
 .rmdp-day.rmdp-selected span:not(.highlight) {
@@ -123,18 +132,35 @@
   display: flex;
   width: 100%;
   justify-content: space-around;
+  align-items: center;
+}
+
+.rmdp-header-values span:hover {
+  color: #1b1464;
+}
+
+.rmdp-header-values span:first-child {
+  border-bottom: 1px solid #1b1464;
+}
+
+.rmdp-header-values span:last-child {
+  border-bottom: 1px solid #1b1464;
 }
 
 .rmdp-header-values span:first-child::after {
-  content: url('/public/assets/icons/dropdown-picker.svg');
+  content: url("/assets/icons/dropdown-picker.svg");
   position: relative;
-  top: 5px;
-  margin-left: 3px;
+  top: 6px;
+  margin-left: 30px;
 }
 
 .rmdp-header-values span:last-child::after {
-  content: url('/public/assets/icons/dropdown-picker.svg');
+  content: url("/assets/icons/dropdown-picker.svg");
   position: relative;
-  top: 5px;
-  margin-left: 3px;
+  top: 6px;
+  margin-left: 30px;
+}
+
+.rmdp-calendar {
+  padding: 0;
 }

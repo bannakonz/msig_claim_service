@@ -8,7 +8,8 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@chakra-ui/storybook-addon"
+    "@chakra-ui/storybook-addon",
+    "@storybook/addon-mdx-gfm"
   ],
 
   framework: {

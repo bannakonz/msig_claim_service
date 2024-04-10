@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Text>Hello world</Text>
+        <Text variant={"mediumParagraph"}>Hello world</Text>
         <Input />
       </main>
     </>

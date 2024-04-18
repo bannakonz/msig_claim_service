@@ -18,7 +18,7 @@ import {
   Portal,
   ResponsiveValue,
   Text,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import type { Calendar as CalendarType } from "react-date-object";
@@ -26,12 +26,12 @@ import {
   Calendar,
   CalendarProps,
   Value as CalendarValue,
-  DateObject
+  DateObject,
 } from "react-multi-date-picker";
 
 import React from "react";
 import { locale_en, locale_th, thai } from "../../../constants/calendar";
-import ErrorMessage from "../../input/ErrorMessage";
+import ErrorMessage from "../input/ErrorMessage";
 // import { Icons } from "@/constants/ICONS";
 
 const thai_th = thai as CalendarType;
@@ -75,13 +75,13 @@ const InputDatePicker = ({
   placement = "bottom",
   isDisabled,
   isClearMaxDate = false, // [MSIG-1236] true = enable maxdate
-  variant
+  variant,
 }: IInputDatePicker) => {
   const initPopoverRef = useRef(null);
   const {
     onOpen: onOpenCalendar,
     onClose: onCloseCalendar,
-    isOpen: isOpenCalendar
+    isOpen: isOpenCalendar,
   } = useDisclosure();
 
   const [overIconClose, setOverIconClose] = useState(false);
@@ -424,7 +424,7 @@ const formatCalendarHeaderDisplayDate = (locale: string, date?: DateObject) => {
 
 const CalendarHeader = ({
   title,
-  calendarValues
+  calendarValues,
 }: {
   title: string;
   calendarValues?: DateObject[];
@@ -516,7 +516,7 @@ export const numberOfYearBetween = (values: any[]) => {
 
 const RangeValueLabel = ({
   label,
-  dateValues
+  dateValues,
 }: {
   label: string;
   dateValues: string[];
@@ -569,7 +569,7 @@ const InputField = ({
   dateValues = [],
   onClear,
   setOverIconClose,
-  isDisabled
+  isDisabled,
 }: IInputField & {
   errorMessage?: string;
   isOpenCalendar: boolean;

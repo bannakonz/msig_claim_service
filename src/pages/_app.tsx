@@ -1,4 +1,5 @@
 import "@/styles/calendar.css";
+import '@/styles/globals.css';
 import { ChakraProvider } from "@chakra-ui/react";
 import { NextIntlClientProvider } from "next-intl";
 import type { AppProps } from "next/app";

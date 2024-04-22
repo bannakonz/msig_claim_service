@@ -4,5 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.sortImports": "explicit"
-  }
+  },
+  "cSpell.words": ["msig"],
+  "i18n-ally.localesPaths": ["src/locales"]
 }

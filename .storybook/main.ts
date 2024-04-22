@@ -11,7 +11,6 @@ const config: StorybookConfig = {
     '@chakra-ui/storybook-addon',
     '@storybook/addon-mdx-gfm',
   ],
-
   framework: {
     name: '@storybook/nextjs',
     options: {},

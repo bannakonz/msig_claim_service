@@ -1,7 +1,9 @@
-import { Input } from "./Input";
-import { Text } from "./Text";
+import { Input } from './Input';
+import { Tabs } from './Tabs';
+import { Text } from './Text';
 
 export default {
   Text,
-  Input
+  Input,
+  Tabs,
 };

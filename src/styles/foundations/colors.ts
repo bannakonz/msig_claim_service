@@ -1,0 +1,16 @@
+export default {
+  ci_blue: '#1B1464',
+  blue_second_1: '#504B78',
+  blue_second_2: '#7A7498',
+  blue_second_3: '#B0ACC4',
+  blue_second_4: '#E3E2EB',
+  ci_red: '#FF1F27',
+  red_second_1: '#E9575D',
+  red_second_2: '#F08F93',
+  bg: '#E1E8F0',
+  white_floral: '#F7F6F3',
+  white: '#FFFFFF',
+  gray: '#808080',
+  dark: '#363636',
+  modal_overlay: '#0D0A30',
+};

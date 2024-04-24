@@ -1,6 +1,6 @@
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
+import { Tab, TabList, TabPanel, TabPanels, Tabs, TabsProps } from '@chakra-ui/react';
 
-interface ITabGroup {
+interface ITabGroup extends TabsProps {
   data: {
     tabName: string;
     value: any;
@@ -10,9 +10,9 @@ interface ITabGroup {
   index?: number;
 }
 
-const TabGroup = ({ data, onChange, defaultIndex, index }: ITabGroup) => {
+const TabGroup = ({ data, onChange, defaultIndex, index, ...rest }: ITabGroup) => {
   return (
-    <Tabs index={index} defaultIndex={defaultIndex} align="center" onChange={onChange}>
+    <Tabs index={index} defaultIndex={defaultIndex} onChange={onChange} {...rest}>
       <TabList>
         {data.map((item, index) => {
           return <Tab key={`tabName${index}`}>{item.tabName}</Tab>;

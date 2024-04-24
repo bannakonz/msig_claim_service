@@ -1,105 +1,83 @@
 import { defineStyleConfig } from '@chakra-ui/react';
 
 export const variants = {
-  smaller: {
-    fontSize: '18px',
-    lineHeight: '23.4px',
-  },
-  smallMediumWight: {
+  normalMedium: {
     fontWeight: 'medium',
-    fontSize: '18px',
-    lineHeight: '23.4px',
+    fontSize: '21px',
+    lineHeight: '31.5px',
   },
-  italicMedium: {
-    fontWeight: 'medium',
-    fontSize: '18px',
-    fontStyle: 'italic',
-    lineHeight: '23.4px',
-  },
-  mediumParagraph: {
-    fontWeight: 'medium',
+  normalText: {
     fontSize: '21px',
     lineHeight: '27.3px',
   },
-  mediumParagraphUnderline: {
-    textDecoration: 'underline',
-    lineHeight: '20px',
-  },
-
-  paragraphText: {
-    lineHeight: '27.3px',
+  paragraphMedium: {
+    fontWeight: 'medium',
+    fontSize: '15px',
+    lineHeight: '22.5px',
   },
   paragraph: {
-    lineHeight: '31.5px',
+    fontSize: '15px',
+    lineHeight: '22.5px',
   },
-
+  smallerMedium: {
+    fontWeight: 'medium',
+    fontSize: '13px',
+    lineHeight: '16.9px',
+  },
+  smaller: {
+    fontSize: '13px',
+    lineHeight: '16.9px',
+  },
+  xsMedium: {
+    fontWeight: 'medium',
+    fontSize: '11px',
+    lineHeight: '16.9px',
+  },
+  xs: {
+    fontSize: '11px',
+    lineHeight: '16.9px',
+  },
+  extraLarge: {
+    fontWeight: 'medium',
+    fontSize: '96px',
+    lineHeight: '63px',
+  },
   title: {
     fontWeight: 'medium',
-    fontSize: '48px',
-    lineHeight: '57.6px',
-    color: 'ci_blue',
-  },
-
-  title2: {
-    fontWeight: 'medium',
     fontSize: '42px',
-    lineHeight: '48px',
-    color: 'ci_blue',
+    lineHeight: '63px',
   },
 
   heading: {
     fontWeight: 'medium',
-    fontSize: '36px',
+    fontSize: '21px',
+    lineHeight: '31.5px',
+  },
+  heading1: {
+    fontWeight: 'medium',
+    fontSize: '32px',
+    lineHeight: '48px',
   },
   heading2: {
     fontWeight: 'medium',
-    fontSize: '32px',
-    lineHeight: '39px',
-  },
-  heading3: {
-    fontWeight: 'medium',
     fontSize: '24px',
-    lineHeight: '29.1px',
+    lineHeight: '36px',
   },
-
-  subHeadMedium: {
+  subTitleMedium: {
     fontWeight: 'medium',
-    fontSize: '24px',
-    lineHeight: '28.8px',
+    fontSize: '18px',
+    lineHeight: '27px',
   },
-  subHeadingText: {
-    fontSize: '24px',
-    lineHeight: '28.8px',
-  },
-
-  titleSubDetail: {
-    fontSize: '24px',
-    lineHeight: '32.4px',
-  },
-
-  extraLarge: {
-    fontWeight: 'medium',
-    fontSize: '72px',
-  },
-  textLarge1: {
-    fontWeight: 'medium',
-    fontSize: '64px',
-  },
-  textLarge2: {
-    fontSize: '40px',
-  },
-
-  largeMedium: {
-    fontWeight: 'medium',
-    fontSize: '40px',
-    color: 'txt_blk_1',
+  subTitle: {
+    fontSize: '18px',
+    lineHeight: '27px',
   },
 };
 
 export const Text = defineStyleConfig({
   baseStyle: {
     fontWeight: 'normal',
-    fontSize: '21px',
+    fontSize: '15px',
   },
   variants,
 });

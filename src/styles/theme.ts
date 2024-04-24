@@ -1,6 +1,6 @@
 import { extendTheme } from '@chakra-ui/react';
 import components from './components';
-// import * as foundations from './foundations';
+import * as foundations from './foundations';
 
 const theme = extendTheme({
   semanticTokens: {
@@ -42,8 +42,7 @@ const theme = extendTheme({
       },
     }),
   },
-
-  // ...foundations,
+  ...foundations,
   components,
 });
 

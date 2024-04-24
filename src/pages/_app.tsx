@@ -1,3 +1,4 @@
+import Layout from '@/components/layout/Layout';
 import '@/styles/calendar.css';
 import Fonts from '@/styles/Fonts';
 import '@/styles/globals.css';
@@ -12,7 +13,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <NextIntlClientProvider messages={{}} locale="th">
       <ChakraProvider theme={theme}>
         <Fonts />
-        <Component {...pageProps} />
+        <Layout {...pageProps}>
+          <Component {...pageProps} />
+        </Layout>
       </ChakraProvider>
     </NextIntlClientProvider>
   );

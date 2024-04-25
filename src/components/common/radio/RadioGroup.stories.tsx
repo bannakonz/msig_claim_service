@@ -11,7 +11,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof RadioGroup>;
 
-export const _InputOTP: Story = {
+export const _RadioGroup: Story = {
   render: (args) => {
     const [state, setState] = useState<string>('M');
 
@@ -39,4 +39,4 @@ export const _InputOTP: Story = {
   },
 };
 
-_InputOTP.args = {};
+_RadioGroup.args = {};

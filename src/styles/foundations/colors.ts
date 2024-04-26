@@ -13,4 +13,5 @@ export default {
   gray: '#808080',
   dark: '#363636',
   modal_overlay: '#0D0A30',
+  base: '#E1E8F04D',
 };

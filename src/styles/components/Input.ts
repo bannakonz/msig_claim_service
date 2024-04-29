@@ -6,7 +6,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 const baseStyle = definePartsStyle({
   field: {
-    borderRadius: "100px",
+    borderRadius: "12px",
     p: "16px"
   },
   element: {
@@ -20,7 +20,7 @@ const sizes = {
       fontSize: "21px",
       lineHeight: "27.3px",
       h: "auto",
-      borderRadius: "16px"
+      borderRadius: "12px"
     }
   })
 };
@@ -29,19 +29,17 @@ const variants = {
   outline: definePartsStyle({
     field: {
       color: "txt_normal",
-      borderColor: "gray",
+      borderColor: "bg",
       _placeholder: {
-        color: "#919191"
+        color: "gray"
       },
       _readOnly: {
         boxShadow: "none"
       },
       _disabled: {
-        color: "txt_copy_right",
-        background: "gray_alpha.300",
+        background: "blue_second_4",
         borderWidth: "1px",
-        borderColor: "gray",
-        opacity: 1
+        opacity: 1,
       }
     }
   })

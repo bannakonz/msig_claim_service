@@ -4,9 +4,9 @@ import React from 'react';
 export default function Home() {
   return (
     <>
-      <Container bg="bg">
+      <Container>
         <Text variant={'mediumParagraph'}>Hello world</Text>
-        <Input />
+        <Input placeholder={"Please enter your name"} />
       </Container>
     </>
   );

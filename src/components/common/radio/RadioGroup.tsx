@@ -86,15 +86,16 @@ function CustomRadio(props: any) {
         alignItems="center"
         justifyContent="center"
         borderRadius="20px"
-        _hover={{
-          bgColor: `${colors.blue_second_4 + '50'}`,
-        }}
-        _focus={{
-          bgColor: `${colors.blue_second_3 + '30'}`,
-        }}
-        _active={{
-          bgColor: `${colors.blue_second_3 + '40'}`,
-        }}
+        // TODO: ปิด Effect Radio กับ Checkbox ให้เหมือนกันไปก่อน
+        // _hover={{
+        //   bgColor: `${colors.blue_second_4 + '50'}`,
+        // }}
+        // _focus={{
+        //   bgColor: `${colors.blue_second_3 + '30'}`,
+        // }}
+        // _active={{
+        //   bgColor: `${colors.blue_second_3 + '40'}`,
+        // }}
       >
         <Box {...checkbox} w="24px" h="24px">
           <SVG

@@ -1,3 +1,4 @@
+import { Checkbox } from './Checkbox';
 import { Container } from './Container';
 import { Input } from './Input';
 import { Radio } from './Radio';
@@ -10,4 +11,5 @@ export default {
   Tabs,
   Container,
   Radio,
+  Checkbox,
 };

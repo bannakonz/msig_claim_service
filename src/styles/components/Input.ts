@@ -1,48 +1,55 @@
-import { inputAnatomy } from "@chakra-ui/anatomy";
-import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
+import { inputAnatomy } from '@chakra-ui/anatomy';
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
+import { colors } from '../foundations';
 
-const { definePartsStyle, defineMultiStyleConfig } =
-  createMultiStyleConfigHelpers(inputAnatomy.keys);
+const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(inputAnatomy.keys);
 
 const baseStyle = definePartsStyle({
   field: {
-    borderRadius: "12px",
-    p: "16px"
+    borderRadius: '12px',
+    p: '16px',
   },
   element: {
-    pr: "16px"
-  }
+    pr: '16px',
+  },
 });
 
 const sizes = {
   md: definePartsStyle({
     field: {
-      fontSize: "21px",
-      lineHeight: "27.3px",
-      h: "auto",
-      borderRadius: "12px"
-    }
-  })
+      fontSize: '15px',
+      lineHeight: '22.5px',
+      h: 'auto',
+      borderRadius: '12px',
+    },
+  }),
 };
 
 const variants = {
   outline: definePartsStyle({
     field: {
-      color: "txt_normal",
-      borderColor: "bg",
+      color: 'gray',
+      borderColor: 'bg',
       _placeholder: {
-        color: "gray"
+        color: 'gray',
       },
       _readOnly: {
-        boxShadow: "none"
+        boxShadow: 'none',
       },
       _disabled: {
-        background: "blue_second_4",
-        borderWidth: "1px",
+        background: `${colors.blue_second_4}` + '50', // Opacity 50%
+        borderWidth: '1px',
         opacity: 1,
-      }
-    }
-  })
+      },
+      _focus: {
+        borderColor: 'blue_second_2',
+        borderWidth: '1px',
+        opacity: 1,
+        boxShadow: 'none',
+        WebkitTapHighlightColor: 'transparent',
+      },
+    },
+  }),
 };
 
 export const Input = defineMultiStyleConfig({
@@ -50,7 +57,7 @@ export const Input = defineMultiStyleConfig({
   sizes,
   variants,
   defaultProps: {
-    size: "md",
-    variant: "outline"
-  }
+    size: 'md',
+    variant: 'outline',
+  },
 });

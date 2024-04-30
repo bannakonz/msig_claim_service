@@ -3,7 +3,7 @@ const ICONS = {
   radioUnChecked: 'radio_button_unchecked.svg',
   logo: 'logo.svg',
   riUserLine: 'ri-user-line.svg',
-
+  clock: 'clock.svg',
   // 🚨 Add your icons somewhere random. This makes merging you much easier and avoids conflicts. 🚨
 };
 

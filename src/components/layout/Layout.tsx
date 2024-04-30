@@ -4,6 +4,8 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Fragment, ReactNode } from 'react';
+import Footer from 'react-multi-date-picker/plugins/range_picker_footer';
+import NavBar from './Navbar';
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
@@ -17,7 +19,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
+      <NavBar />
       <main>{children}</main>
+      <Footer />
     </Fragment>
   );
 };

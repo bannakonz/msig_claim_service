@@ -1,9 +1,9 @@
-import { Stack } from "@chakra-ui/react";
-import { Meta, StoryObj } from "@storybook/react";
-import Title from "./Title";
+import { Stack } from '@chakra-ui/react';
+import { Meta, StoryObj } from '@storybook/react';
+import Title from './Title';
 
 const meta = {
-  title: "Components/content/Title",
+  title: 'Components/content/Title',
   component: Title,
   argTypes: {},
 } satisfies Meta<typeof Title>;
@@ -15,9 +15,9 @@ export const _Title: Story = {
   render: (args) => (
     <Stack gap={10}>
       <Title
-        variant={{ base: "largeMedium", xl: "title" }}
-        alignItems={{ base: "center", xl: "start" }}
-        titleBorder={{ display: { base: "box", xl: "none" } }}
+        variant={{ base: 'heading', xl: 'title' }}
+        alignItems={{ base: 'center', xl: 'start' }}
+        titleBorder={{ display: { base: 'box', xl: 'none' } }}
       >
         คุ้มครอง ครอบคลุม พอดีกับทุกความต้องการ
       </Title>
@@ -28,10 +28,7 @@ export const _Title: Story = {
 
       <Title>ประกันภัยรถยนต์</Title>
 
-      <Title
-        gap={{ base: 8, xl: 6 }}
-        titleBorder={{ w: { base: 7, xl: 10 }, h: { base: "1.5", xl: 2 } }}
-      >
+      <Title gap={{ base: 8, xl: 6 }} titleBorder={{ w: { base: 7, xl: 10 }, h: { base: '1.5', xl: 2 } }}>
         โปรโมชั่น
       </Title>
     </Stack>

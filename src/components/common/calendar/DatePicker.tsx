@@ -411,7 +411,7 @@ const CalendarHeader = ({ title, calendarValues }: { title: string; calendarValu
         color="ci_blue"
         borderTop="1px solid"
         borderColor="gray"
-        backgroundColor="base"
+        backgroundColor="blue_second_4"
         templateColumns="repeat(2, 1fr)"
         lineHeight="18px"
       >

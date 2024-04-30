@@ -1,6 +1,6 @@
 import Layout from '@/components/layout/Layout';
-import '@/styles/calendar.css';
 import Fonts from '@/styles/Fonts';
+import '@/styles/calendar.css';
 import '@/styles/globals.css';
 import theme from '@/styles/theme';
 import { ChakraProvider } from '@chakra-ui/react';

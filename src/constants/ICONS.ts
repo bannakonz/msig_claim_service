@@ -1,6 +1,9 @@
 const ICONS = {
   radioChecked: 'radio_button_checked.svg',
   radioUnChecked: 'radio_button_unchecked.svg',
+  logo: 'logo.svg',
+  riUserLine: 'ri-user-line.svg',
+
   // 🚨 Add your icons somewhere random. This makes merging you much easier and avoids conflicts. 🚨
 };
 

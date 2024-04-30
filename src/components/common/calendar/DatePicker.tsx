@@ -1,4 +1,4 @@
-import { CalendarIcon, CloseIcon, InfoIcon } from "@chakra-ui/icons";
+import { CalendarIcon, CloseIcon, InfoIcon } from '@chakra-ui/icons';
 import {
   Box,
   Button,
@@ -19,19 +19,14 @@ import {
   ResponsiveValue,
   Text,
   useDisclosure,
-} from "@chakra-ui/react";
-import { useEffect, useRef, useState } from "react";
-import type { Calendar as CalendarType } from "react-date-object";
-import {
-  Calendar,
-  CalendarProps,
-  Value as CalendarValue,
-  DateObject,
-} from "react-multi-date-picker";
+} from '@chakra-ui/react';
+import { useEffect, useRef, useState } from 'react';
+import type { Calendar as CalendarType } from 'react-date-object';
+import { Calendar, CalendarProps, Value as CalendarValue, DateObject } from 'react-multi-date-picker';
 
-import React from "react";
-import { locale_en, locale_th, thai } from "../../../constants/calendar";
-import ErrorMessage from "../input/ErrorMessage";
+import React from 'react';
+import { locale_en, locale_th, thai } from '../../../constants/calendar';
+import ErrorMessage from '../input/ErrorMessage';
 // import { Icons } from "@/constants/ICONS";
 
 const thai_th = thai as CalendarType;
@@ -72,17 +67,13 @@ const InputDatePicker = ({
 
   onChangeDateValues,
 
-  placement = "bottom",
+  placement = 'bottom',
   isDisabled,
   isClearMaxDate = false, // [MSIG-1236] true = enable maxdate
   variant,
 }: IInputDatePicker) => {
   const initPopoverRef = useRef(null);
-  const {
-    onOpen: onOpenCalendar,
-    onClose: onCloseCalendar,
-    isOpen: isOpenCalendar,
-  } = useDisclosure();
+  const { onOpen: onOpenCalendar, onClose: onCloseCalendar, isOpen: isOpenCalendar } = useDisclosure();
 
   const [overIconClose, setOverIconClose] = useState(false);
 
@@ -133,9 +124,7 @@ const InputDatePicker = ({
             />
           </div>
         </PopoverTrigger>
-        {showRangeValue && (
-          <RangeValueLabel label="จำนวนวันเดินทาง" dateValues={dateValues} />
-        )}
+        {showRangeValue && <RangeValueLabel label="จำนวนวันเดินทาง" dateValues={dateValues} />}
         <ErrorMessage>{errorMessage}</ErrorMessage>
         {isOpenCalendar && (
           <CalendarContent
@@ -151,10 +140,7 @@ const InputDatePicker = ({
   );
 };
 
-const getDefaultCalenderValue = (
-  defaultValues?: DateObject | DateObject[],
-  dateValues?: string[]
-) => {
+const getDefaultCalenderValue = (defaultValues?: DateObject | DateObject[], dateValues?: string[]) => {
   if (!dateValues || !dateValues?.[0]) {
     if (defaultValues?.toString()) {
       return defaultValues;
@@ -174,14 +160,14 @@ const getDefaultCalenderValue = (
   return [startDateObject, endDateObject];
 };
 
-const DATE_FORMAT = "YYYY-MM-DDThh:mm:ss";
+const DATE_FORMAT = 'YYYY-MM-DDThh:mm:ss';
 
 /** format DateObject to YYYY/MM/DDThh:mm:ss AD */
 export const formatDateObjectToString = (value: DateObject, locale: string) => {
   // MSIG-1270 เลือกวันที่ 29 กพ ไม่ได้
   const day = value.day;
   const month = value.month;
-  const year = locale === "th" ? value.year - 543 : value.year;
+  const year = locale === 'th' ? value.year - 543 : value.year;
 
   const _value = new DateObject(`${year}-${month}-${day}`);
 
@@ -196,7 +182,7 @@ export const formatDateObjectToString = (value: DateObject, locale: string) => {
 /** format Date to DD/MM/YYYY */
 export const formatSlashDayMonthYear = (value?: string) => {
   if (!value) {
-    return "";
+    return '';
   }
 
   const _value = new DateObject(value);
@@ -205,20 +191,20 @@ export const formatSlashDayMonthYear = (value?: string) => {
 
 export const convertDateToISOString = (dateString: string, locale?: string) => {
   if (!dateString) {
-    return "";
+    return '';
   }
 
-  const [day, month, year] = dateString.split("/");
+  const [day, month, year] = dateString.split('/');
 
   if (day && month && year) {
     let _year = Number(year);
-    if (locale === "th") {
+    if (locale === 'th') {
       _year = _year - 543;
     }
 
     return `${_year}-${month}-${day}T12:00:00`;
   }
-  return "";
+  return '';
 };
 
 type TMaxDate = string | number | Date | DateObject | undefined;
@@ -243,13 +229,13 @@ const CalendarContent = (
     isClearMaxDate,
     ...rest
   } = props;
-  const _locale = "th";
+  const _locale = 'th';
   //   const t = useTranslations("ta.searchPlan");
   const [maxDate, setMaxDate] = useState<TMaxDate>(rest.maxDate);
   const [calendarValues, setCalendarValues] = useState<CalendarValue>(
     getDefaultCalenderValue(defaultValues, dateValues)
   );
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
 
   const onHandleSubmit = (submitValues?: DateObject | DateObject[]) => {
     if (!calendarValues && !submitValues) {
@@ -261,14 +247,10 @@ const CalendarContent = (
     if (Array.isArray(submitValues)) {
       // MSIG-563
       let autoEndDate = new DateObject(submitValues[0] || submitValues[1]);
-      autoEndDate.add("1", "years");
-      autoEndDate.subtract("1", "days");
-      formatted.push(
-        formatDateObjectToString(submitValues[0] as DateObject, _locale)
-      );
-      formatted.push(
-        formatDateObjectToString(autoEndDate as DateObject, _locale)
-      );
+      autoEndDate.add('1', 'years');
+      autoEndDate.subtract('1', 'days');
+      formatted.push(formatDateObjectToString(submitValues[0] as DateObject, _locale));
+      formatted.push(formatDateObjectToString(autoEndDate as DateObject, _locale));
     } else if (Array.isArray(calendarValues)) {
       // [MSIG-1236] ถ้าเลือก start date เกินให้ขึ้นแจ้งเตือน
       if (isClearMaxDate && calendarValues[0] > (rest.maxDate as DateObject)) {
@@ -276,19 +258,10 @@ const CalendarContent = (
         return;
       }
 
-      formatted.push(
-        formatDateObjectToString(calendarValues[0] as DateObject, _locale)
-      );
-      formatted.push(
-        formatDateObjectToString(
-          (calendarValues[1] || calendarValues[0]) as DateObject,
-          _locale
-        )
-      );
+      formatted.push(formatDateObjectToString(calendarValues[0] as DateObject, _locale));
+      formatted.push(formatDateObjectToString((calendarValues[1] || calendarValues[0]) as DateObject, _locale));
     } else {
-      formatted.push(
-        formatDateObjectToString(submitValues as DateObject, _locale)
-      );
+      formatted.push(formatDateObjectToString(submitValues as DateObject, _locale));
     }
 
     onSubmitCalender(formatted);
@@ -311,12 +284,7 @@ const CalendarContent = (
           boxShadow="0px 4px 32px rgba(27, 21, 100, 0.1)"
         >
           {/* MSIG-864 แสดง label เหมือนกันทั้งในประเทศ ต่างประเทศ */}
-          {range && (
-            <CalendarHeader
-              title="เลือกวันเดินทาง"
-              calendarValues={calendarValues as DateObject[]}
-            />
-          )}
+          {range && <CalendarHeader title="เลือกวันเดินทาง" calendarValues={calendarValues as DateObject[]} />}
 
           <PopoverBody
             display="flex"
@@ -330,7 +298,7 @@ const CalendarContent = (
           >
             <Calendar
               format="DD/MM/YYYY"
-              calendar={_locale === "th" ? thai_th : undefined}
+              calendar={_locale === 'th' ? thai_th : undefined}
               hideWeekDays={false}
               value={calendarValues}
               onChange={(selectedDates: DateObject | DateObject[]) => {
@@ -349,7 +317,7 @@ const CalendarContent = (
                   onHandleSubmit(selectedDates as DateObject);
                 }
               }}
-              locale={_locale === "th" ? locale_th : locale_en}
+              locale={_locale === 'th' ? locale_th : locale_en}
               shadow={false}
               showOtherDays={true}
               rangeHover={false}
@@ -365,13 +333,7 @@ const CalendarContent = (
             {range && (
               <>
                 <Box bg="bg_footer" borderRadius="12px" width="100%">
-                  <Text
-                    py={2}
-                    px="12px"
-                    width="100%"
-                    color="ci_blue"
-                    variant="smallMediumWight"
-                  >
+                  <Text py={2} px="12px" width="100%" color="ci_blue" variant="smallMediumWight">
                     <InfoIcon mr={2} /> วันที่สิ้นสุดการเดินทาง ภายใน 24.00 น.
                   </Text>
                 </Box>
@@ -412,9 +374,9 @@ const CalendarContent = (
 };
 
 const formatCalendarHeaderDisplayDate = (locale: string, date?: DateObject) => {
-  if (!date) return "\u00A0";
+  if (!date) return '\u00A0';
 
-  if (locale === "th") {
+  if (locale === 'th') {
     date.setLocale(locale_th);
     date.setCalendar(thai_th);
   }
@@ -422,14 +384,8 @@ const formatCalendarHeaderDisplayDate = (locale: string, date?: DateObject) => {
   return `${date.day} ${date.month.shortName} ${date.year}`;
 };
 
-const CalendarHeader = ({
-  title,
-  calendarValues,
-}: {
-  title: string;
-  calendarValues?: DateObject[];
-}) => {
-  const _locale = "th";
+const CalendarHeader = ({ title, calendarValues }: { title: string; calendarValues?: DateObject[] }) => {
+  const _locale = 'th';
 
   return (
     <PopoverHeader
@@ -455,17 +411,12 @@ const CalendarHeader = ({
         color="ci_blue"
         borderTop="1px solid"
         borderColor="gray"
-        backgroundColor="#e1e8f04d"
+        backgroundColor="blue_second_4"
         templateColumns="repeat(2, 1fr)"
         lineHeight="18px"
       >
         {/* MSIG-864 แสดง label เหมือนกันทั้งในประเทศ ต่างประเทศ */}
-        <GridItem
-          borderRight="1px solid"
-          borderColor="gray"
-          textAlign="center"
-          p={2}
-        >
+        <GridItem borderRight="1px solid" borderColor="gray" textAlign="center" p={2}>
           <Text fontSize="16px">วันที่เริ่มต้นการเดินทาง</Text>
           <Text variant="mediumParagraph" mt="2px">
             {formatCalendarHeaderDisplayDate(_locale, calendarValues?.[0])}
@@ -506,21 +457,14 @@ export const numberOfYearBetween = (values: any[]) => {
     const startMonth = start.getMonth();
     const endMonth = end.getMonth();
 
-    const numberOfYearsBetween =
-      endYear > startYear && endMonth >= startMonth ? endYear - startYear : 0;
+    const numberOfYearsBetween = endYear > startYear && endMonth >= startMonth ? endYear - startYear : 0;
 
     return numberOfYearsBetween;
   }
   return 0;
 };
 
-const RangeValueLabel = ({
-  label,
-  dateValues,
-}: {
-  label: string;
-  dateValues: string[];
-}) => {
+const RangeValueLabel = ({ label, dateValues }: { label: string; dateValues: string[] }) => {
   const numberOfDate = numberOfDateBetween(dateValues);
   const numberOfYear = numberOfYearBetween(dateValues);
 
@@ -531,7 +475,7 @@ const RangeValueLabel = ({
   );
 };
 
-const DATE_DISPLAY_FORMAT = "DD/MM/YYYY";
+const DATE_DISPLAY_FORMAT = 'DD/MM/YYYY';
 
 export const formatInputFieldDisplayDate = (locale: string, value: string) => {
   const _date = new DateObject(value);
@@ -541,7 +485,7 @@ export const formatInputFieldDisplayDate = (locale: string, value: string) => {
   // }
 
   // MSIG-1270 เลือกวันที่ 29 กพ ไม่ได้
-  if (locale === "th") {
+  if (locale === 'th') {
     _date.setLocale(locale_th);
     _date.setCalendar(thai_th);
   }
@@ -563,7 +507,7 @@ const getInputFieldDisplayDate = (locale: string, dateValues?: string[]) => {
 
 const InputField = ({
   name,
-  placeholder = "",
+  placeholder = '',
   errorMessage,
   isOpenCalendar,
   dateValues = [],
@@ -578,7 +522,7 @@ const InputField = ({
   setOverIconClose: (_value: boolean) => void;
   isDisabled?: boolean;
 }) => {
-  const _locale = "th";
+  const _locale = 'th';
   const displayDate = getInputFieldDisplayDate(_locale, dateValues);
 
   return (
@@ -586,7 +530,7 @@ const InputField = ({
       <Input
         name={name}
         type="text"
-        value={displayDate?.join(" - ") || ""}
+        value={displayDate?.join(' - ') || ''}
         placeholder={placeholder}
         isInvalid={!!errorMessage}
         autoComplete="off"

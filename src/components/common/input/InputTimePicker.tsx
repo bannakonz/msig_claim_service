@@ -56,11 +56,11 @@ const InputTimePicker = ({
     onCloseTime();
   };
 
-  const onClear = () => {
+  const onClear = (event: React.MouseEvent<HTMLDivElement>) => {
     onChangeTimeValue('');
-
-    const docId = `popover-content-time-popover-${inputField.name}`;
-    document.getElementById(docId)?.focus();
+    if (event) {
+      (event as any).stopPropagation();
+    }
   };
 
   return (
@@ -226,7 +226,7 @@ const InputField = ({
   isOpenTime: boolean;
   timeValue: string;
   isDisabled?: boolean;
-  onClear: () => void;
+  onClear: (e: React.MouseEvent<HTMLDivElement>) => void;
 }) => {
   return (
     <InputGroup>
@@ -243,7 +243,9 @@ const InputField = ({
       />
       <InputRightElement height="100%" cursor="pointer">
         {timeValue ? (
-          <CloseIcon color="gray" onClick={onClear} />
+          <Box onClick={onClear}>
+            <CloseIcon color="gray" />
+          </Box>
         ) : (
           <SVG width={'24px'} height={'24px'} src={Icons.clock} />
         )}

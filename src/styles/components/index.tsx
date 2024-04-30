@@ -1,3 +1,4 @@
+import { Accordion } from './Accordion';
 import { Checkbox } from './Checkbox';
 import { Container } from './Container';
 import { Input } from './Input';
@@ -12,4 +13,5 @@ export default {
   Container,
   Radio,
   Checkbox,
+  Accordion,
 };

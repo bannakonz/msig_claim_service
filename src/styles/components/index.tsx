@@ -1,3 +1,4 @@
+import { Card } from './Card';
 import { Container } from './Container';
 import { Input } from './Input';
 import { Tabs } from './Tabs';
@@ -8,4 +9,5 @@ export default {
   Input,
   Tabs,
   Container,
+  Card,
 };

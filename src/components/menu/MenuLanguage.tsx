@@ -10,8 +10,6 @@ const languageList: Record<string, string> = { th: 'Th', en: 'En' };
 const MenuLanguage = () => {
   const locale = useLocale();
 
-  console.log('locale :>> ', locale);
-
   // const { clearSessionStorage } = useGlobalData();
 
   const [selectedLanguage, setSelectedLanguage] = useState(locale);

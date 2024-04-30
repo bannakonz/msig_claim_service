@@ -1,10 +1,7 @@
-import { Icons } from '@/constants/ICONS';
-import featureFlags from '@/utils/featureFlags';
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Fragment, ReactNode } from 'react';
-import Footer from 'react-multi-date-picker/plugins/range_picker_footer';
+import Footer from './Footer';
 import NavBar from './Navbar';
 
 const Layout = ({ children }: { children: ReactNode }) => {

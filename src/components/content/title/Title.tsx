@@ -11,7 +11,7 @@ interface IHeadingProps extends HeadingProps {
 const Title = ({
   children,
   gap = 8,
-  variant = 'largeMedium',
+  variant = 'heading',
   alignItems = 'center',
   textAlign = 'center',
   titleBorder,

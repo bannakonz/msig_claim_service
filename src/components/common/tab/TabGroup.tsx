@@ -1,6 +1,6 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs, TabsProps } from '@chakra-ui/react';
 
-interface ITabGroup extends TabsProps {
+interface ITabGroup {
   data: {
     tabName: string;
     value: any;

@@ -26,6 +26,7 @@ const theme = extendTheme({
     heading: 'Prompt',
     body: 'Prompt',
   },
+
   styles: {
     global: () => ({
       '*,*::before,*::after': {

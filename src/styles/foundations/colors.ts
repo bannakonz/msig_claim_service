@@ -13,4 +13,8 @@ export default {
   gray: '#808080',
   dark: '#363636',
   modal_overlay: '#0D0A30',
+  green_mint: '#35C9AD',
+  green_mint_alpha: {
+    100: '#35C9AD1A',
+  },
 };

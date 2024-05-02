@@ -4,6 +4,12 @@ const ICONS = {
   logo: 'logo.svg',
   riUserLine: 'ri-user-line.svg',
   clock: 'clock.svg',
+  facebook: 'facebook.svg',
+  youtube: 'YouTube.svg',
+  ig: 'IG.svg',
+  line: 'Line.svg',
+  tiktok: 'TikTok.svg',
+
   // 🚨 Add your icons somewhere random. This makes merging you much easier and avoids conflicts. 🚨
 };
 

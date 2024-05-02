@@ -114,10 +114,18 @@ const TimeContent = (props: { timeValues?: string; onSubmitTime: (_timeValue: st
 
   const onHourChange = (value: string) => {
     setSelectedHour(value);
+    const selectedHourElement = document.getElementById(`hour_${value}`);
+    if (selectedHourElement) {
+      selectedHourElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const onMinuteChange = (value: string) => {
     setSelectedMinute(value);
+    const selectedMinElement = document.getElementById(`min_${value}`);
+    if (selectedMinElement) {
+      selectedMinElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const hours = Array.from({ length: 24 }, (_, i) => `${i.toString().padStart(2, '0')}`);
@@ -148,10 +156,11 @@ const TimeContent = (props: { timeValues?: string; onSubmitTime: (_timeValue: st
             </Text>
           </PopoverHeader>
           <PopoverBody display="flex" alignItems="flex-start" p="0px">
-            <Box h="210px" px="2px" overflowY="scroll">
+            <Box h="210px" px="2px" pb="170px" overflowY="scroll">
               {hours.map((hour) => (
                 <Box
                   key={hour}
+                  id={`hour_${hour}`}
                   onClick={() => onHourChange(hour)}
                   as="option"
                   textAlign="center"
@@ -166,10 +175,11 @@ const TimeContent = (props: { timeValues?: string; onSubmitTime: (_timeValue: st
                 </Box>
               ))}
             </Box>
-            <Box h="210px" px="2px" overflowY="scroll" borderLeftWidth="1px" borderColor="bg">
+            <Box h="210px" px="2px" pb="170px" overflowY="scroll" borderLeftWidth="1px" borderColor="bg">
               {minutes.map((min) => (
                 <Box
                   key={min}
+                  id={`min_${min}`}
                   onClick={() => onMinuteChange(min)}
                   as="option"
                   textAlign="center"

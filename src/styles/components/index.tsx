@@ -1,3 +1,4 @@
+import { Card } from './Card';
 import { Checkbox } from './Checkbox';
 import { Container } from './Container';
 import { Input } from './Input';
@@ -10,6 +11,7 @@ export default {
   Input,
   Tabs,
   Container,
+  Card,
   Radio,
   Checkbox,
 };

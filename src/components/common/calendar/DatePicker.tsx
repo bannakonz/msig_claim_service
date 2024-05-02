@@ -415,7 +415,6 @@ const CalendarHeader = ({ title, calendarValues }: { title: string; calendarValu
         templateColumns="repeat(2, 1fr)"
         lineHeight="18px"
       >
-        {/* MSIG-864 แสดง label เหมือนกันทั้งในประเทศ ต่างประเทศ */}
         <GridItem borderRight="1px solid" borderColor="gray" textAlign="center" p={2}>
           <Text fontSize="16px">วันที่เริ่มต้นการเดินทาง</Text>
           <Text variant="mediumParagraph" mt="2px">

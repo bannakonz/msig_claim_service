@@ -10,7 +10,7 @@ const UserLogin = () => {
         alignItems={'center'}
         justifyContent={'center'}
         borderRadius={'100%'}
-        bg={'base'}
+        bg={'blue_second_4'}
         width={'48px'}
         height={'48px'}
       >

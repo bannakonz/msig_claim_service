@@ -1,3 +1,4 @@
+import { Accordion } from './Accordion';
 import { Card } from './Card';
 import { Checkbox } from './Checkbox';
 import { Container } from './Container';
@@ -14,4 +15,5 @@ export default {
   Card,
   Radio,
   Checkbox,
+  Accordion,
 };
